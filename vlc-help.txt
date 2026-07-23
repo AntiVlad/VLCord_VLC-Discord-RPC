@@ -1,0 +1,415 @@
+﻿  visual                 Visualizer filter
+  projectm               libprojectM effect
+  goom                   Goom effect
+  glspectrum             3D OpenGL spectrum visualization
+  wall                   Wall video filter
+  panoramix              Panoramix: wall with overlap video filter
+  clone                  Clone video filter
+  yuv                    YUV video output
+  inhibit                Windows screen saver inhibition
+  wingdi                 Windows GDI video output
+  wgl                    WGL extension for OpenGL
+  vmem                   Video memory output
+  vdummy                 Dummy video output
+  vdummy                 Statistics video output
+  gl                     OpenGL video output
+  glwin32                OpenGL video output for Windows
+  glinterop_dxva2        DX OpenGL surface converter for D3D9
+  flaschen               Flaschen-Taschen video output
+  drawable               Embedded window video
+  directdraw             DirectX (DirectDraw) video output
+  direct3d9              Direct3D9 video output
+  direct3d11             Direct3D11 video output
+  caca                   Color ASCII art video output
+  wave                   Wave video filter
+  vhs                    VHS movie effect video filter
+  transform              Video transformation filter
+  sharpen                Sharpen video filter
+  sepia                  Sepia video filter
+  scene                  Scene video filter
+  scale                  Video scaling filter
+  rotate                 Rotate video filter
+  ripple                 Ripple video filter
+  puzzle                 Puzzle interactive game video filter
+  psychedelic            Psychedelic video filter
+  postproc               Video post processing filter
+  posterize              Posterize video filter
+  oldmovie               Old movie effect video filter
+  motiondetect           Motion detect video filter
+  motionblur             Motion blur filter
+  mirror                 Mirror video filter
+  magnify                Magnify/Zoom interactive video filter
+  invert                 Invert video filter
+  hqdn3d                 High Quality 3D Denoiser filter
+  grain                  Grain video filter
+  gradient               Gradient video filter
+  gradfun                Gradfun video filter
+  gaussianblur           Gaussian blur video filter
+  freeze                 Freezing interactive video filter
+  fps                    FPS conversion video filter
+  extract                Extract RGB component video filter
+  erase                  Erase video filter
+  edgedetection          Edge detection video filter
+  deinterlace            Deinterlacing video filter
+  croppadd               Video cropping filter
+  colorthres             Color threshold filter
+  canvas                 Canvas video filter
+  bluescreen             Bluescreen video filter
+  blend                  Video pictures blending
+  blendbench             Blending benchmark filter
+  ball                   Ball video filter
+  antiflicker            antiflicker video filter
+  anaglyph               Convert 3D picture to anaglyph image video filter
+  alphamask              Alpha mask video filter
+  adjust                 Image properties filter
+  yuy2_i422              Conversions from YUY2,YUNV,YVYU,UYVY,UYNV,Y422 to I422
+  yuy2_i420              Conversions from YUY2,YUNV,YVYU,UYVY,UYNV,Y422 to I420
+  yuvp                   YUVP converter
+  swscale                Video scaling filter
+  rv32                   RV32 conversion filter
+  i422_yuy2_sse2         SSE2 conversions from I422 to YUY2,YUNV,YVYU,UYVY,UYNV,Y422,IUYV
+  i422_yuy2              Conversions from I422 to YUY2,YUNV,YVYU,UYVY,UYNV,Y422,IUYV,Y211
+  i422_yuy2_mmx          MMX conversions from I422 to YUY2,YUNV,YVYU,UYVY,UYNV,Y422,IUYV
+  i422_i420              Conversions from I422,J422 to I420,IYUV,J420,YV12,YUVA
+  i420_yuy2_sse2         SSE2 conversions from I420,IYUV,YV12 to YUY2,YUNV,YVYU,UYVY,UYNV,Y422,IUYV
+  i420_yuy2              Conversions from I420,IYUV,YV12 to YUY2,YUNV,YVYU,UYVY,UYNV,Y422,IUYV,Y211
+  i420_yuy2_mmx          MMX conversions from I420,IYUV,YV12 to YUY2,YUNV,YVYU,UYVY,UYNV,Y422,IUYV
+  i420_rgb_sse2          SSE2 I420,IYUV,YV12 to RV15,RV16,RV24,RV32 conversions
+  i420_rgb               I420,IYUV,YV12 to RGB2,RV15,RV16,RV24,RV32 conversions
+  i420_rgb_mmx           MMX I420,IYUV,YV12 to RV15,RV16,RV24,RV32 conversions
+  i420_nv12              YUV planar to semiplanar conversions
+  i420_10_p010           YUV 10-bits planar to semiplanar 10-bits conversions
+  grey_yuv               Conversions from GREY to I420,YUY2
+  chain                  Video filtering using a chain of video filter modules
+  chain                  Video filtering using a chain of video filter modules
+  tdummy                 Dummy font renderer
+  sapi                   Speech synthesis for Windows
+  freetype               Freetype2 font renderer
+  stream_out_transcode   Transcode stream output
+  stats                  Writes statistic info about stream
+  stream_out_standard    Standard stream output
+  smem                   Stream output to memory buffer
+  setid                  Change the id of an elementary stream
+  setid                  Change the language of an elementary stream
+  stream_out_rtp         RTP stream output
+  stream_out_rtp         RTSP VoD server
+  record                 Record stream output
+  mosaic_bridge          Mosaic bridge stream output
+  gather                 Gathering stream output
+  es                     Elementary stream output
+  duplicate              Duplicate stream output
+  dummy                  Dummy stream output
+  display                Display stream output
+  description            Description stream output
+  delay                  Delay a stream
+  cycle                  Cyclic stream output
+  stream_out_chromecast  Chromecast stream output
+  stream_out_chromecast  Chromecast stream output
+  stream_out_chromecast  Chromecast stream output
+  stream_out_chromaprint Chromaprint stream output
+  bridge                 Bridge stream output
+  bridge                 Bridge stream output
+  bridge                 Bridge stream output
+  autodel                Automatically add/delete input streams
+  skiptags               APE/ID3 tags-skipping filter
+  record                 Internal stream record
+  prefetch               Stream prefetch filter
+  inflate                Zlib decompression filter
+  hds                    HTTP Dynamic Streaming
+  cache_read             Byte stream cache
+  cache_block            Block stream cache
+  aribcam                ARIB STD-B25 Cam module
+  adf                    ADF stream filter
+  archive                libarchive based stream directory
+  archive                libarchive based stream extractor
+  subsdelay              Subtitle delay
+  rss                    RSS and Atom feed display
+  remoteosd              Remote-OSD over VNC
+  mosaic                 Mosaic video sub source
+  marq                   Marquee display
+  logo                   Logo sub source
+  logo                   Logo video filter
+  audiobargraph_v        Audio Bar Graph Video sub source
+  audiobargraph_v        Audio Bar Graph Video sub source
+  windrive               windrive
+  windrive               windrive
+  windrive               Discs
+  upnp                   Universal Plug'n'Play
+  upnp                   Universal Plug'n'Play
+  upnp                   Universal Plug'n'Play
+  sap                    Network streams (SAP)
+  sap                    SDP Descriptions parser
+  sap                    Network streams (SAP)
+  podcast                Podcasts
+  podcast                Podcasts
+  microdns               mDNS Network Discovery
+  microdns               mDNS Network Discovery
+  microdns               mDNS Renderer Discovery
+  microdns               mDNS Network Discovery
+  mediadirs              My Videos
+  mediadirs              My Videos
+  mediadirs              My Pictures
+  mediadirs              My Music
+  vc1                    VC-1 packetizer
+  mpegvideo              MPEG-I/II video packetizer
+  mpegaudio              MPEG audio layer I/II/III packetizer
+  mpeg4video             MPEG4 video packetizer
+  mpeg4audio             MPEG4 audio packetizer
+  mlp                    MLP/TrueHD parser
+  hevc                   HEVC/H.265 video packetizer
+  h264                   H.264 video packetizer
+  flac                   Flac audio packetizer
+  dts                    DTS audio packetizer
+  dirac                  Dirac packetizer
+  copy                   Copy packetizer
+  av1                    AV1 video packetizer
+  a52                    A/52 audio packetizer
+  wav                    WAV muxer
+  mux_ts                 TS muxer (libdvbpsi)
+  ps                     PS muxer
+  mux_ogg                Ogg/OGM muxer
+  mpjpeg                 Multipart JPEG muxer
+  mp4                    MP4/MOV muxer
+  mp4                    Fragmented and streamable MP4 muxer
+  dummy                  Dummy/Raw muxer
+  avi                    AVI muxer
+  asf                    ASF muxer
+  xml                    XML Parser (using libxml2)
+  xml                    XML Parser (using libxml2)
+  rtsp                   Legacy RTSP VoD server
+  stats                  Stats encoder function
+  stats                  Stats demux function
+  stats                  Stats decoder function
+  stats                  Stats decoder function
+  stats                  Stats decoder function
+  logger                 File logging
+  gnutls                 GNU TLS transport layer security
+  gnutls                 GNU TLS server
+  fingerprinter          Track fingerprinter (based on Acoustid)
+  export                 export
+  export                 HTML playlist export
+  export                 XSPF playlist export
+  export                 M3U8 playlist export
+  export                 M3U playlist export
+  audioscrobbler         Submission of played songs to last.fm
+  vorepository           addons.videolan.org addons finder
+  vorepository           single .vlp archive addons finder
+  fsstorage              Addons local storage installer
+  fsstorage              Addons local storage lister
+  taglib                 taglib
+  taglib                 taglib
+  folder                 Folder meta data
+  lua                    Lua interpreter
+  lua                    Lua interpreter
+  lua                    Lua SD Module
+  lua                    Lua Extension
+  lua                    Fetch artwork using lua scripts
+  lua                    Lua Playlist Parser Interface
+  lua                    Read meta data using lua scripts
+  lua                    Fetch meta data using lua scripts
+  lua                    Lua Telnet
+  lua                    Command-line interface
+  lua                    Lua HTTP
+  file                   File logger
+  console                Console logger
+  memory                 Secrets are stored in memory
+  file                   Secrets are stored on a file without any encryption
+  file                   Secrets are stored encrypted on a file
+  skins2                 Skinnable Interface
+  skins2                 Skinnable Interface
+  qt                     Qt interface
+  qt                     Qt interface
+  qt                     Dialogs provider
+  xa                     XA demuxer
+  wav                    WAV demuxer
+  voc                    VOC demuxer
+  vobsub                 Vobsub subtitles parser
+  vc1                    VC1 video demuxer
+  ty                     TY Stream audio/video demux
+  tta                    TTA demuxer
+  ts                     MPEG Transport Stream demuxer
+  subtitle               Text subtitle parser
+  smf                    SMF demuxer
+  sid                    C64 sid demuxer
+  real                   Real demuxer
+  rawvid                 Raw video demuxer
+  rawdv                  DV (Digital Video) demuxer
+  rawaud                 Raw audio demuxer
+  pva                    PVA demuxer
+  ps                     MPEG-PS demuxer
+  ps                     MPEG-PS demuxer
+  playlist               Playlist
+  playlist               WPL playlist import
+  playlist               iTunes Music Library importer
+  playlist               Dummy IFO demux
+  playlist               QuickTime Media Link importer
+  playlist               Kasenna MediaBase parser
+  playlist               ASX playlist import
+  playlist               New winamp 5.2 shoutcast import
+  playlist               XSPF playlist import
+  playlist               Podcast parser
+  playlist               DVB playlist import
+  playlist               B4S playlist import
+  playlist               PLS playlist import
+  playlist               RAM playlist import
+  playlist               M3U playlist import
+  ogg                    OGG demuxer
+  nuv                    Nuv demuxer
+  nsv                    NullSoft demuxer
+  nsc                    Windows Media NSC metademux
+  noseek                 Seek prevention demux filter
+  mpgv                   MPEG-I/II video demuxer
+  mpc                    MusePack demuxer
+  mp4                    MP4 stream demuxer
+  mod                    MOD demuxer (libmodplug)
+  mkv                    Matroska stream demuxer
+  mjpeg                  M-JPEG camera demuxer
+  image                  Image demuxer
+  h26x                   H264 video demuxer
+  h26x                   HEVC/H.265 video demuxer
+  gme                    Game Music Emu
+  flacsys                FLAC demuxer
+  es                     MPEG-I/II/4 / A52 / DTS / MLP audio
+  es                     MPEG-4 video
+  dmxmus                 DMX music demuxer
+  directory              Directory import
+  diracsys               Dirac video demuxer
+  demux_stl              EBU STL subtitles parser
+  demux_chromecast       Chromecast demux wrapper
+  demux_cdg              CDG demuxer
+  demuxdump              File dumper
+  caf                    CAF demuxer
+  avi                    AVI demuxer
+  au                     AU demuxer
+  asf                    ASF/WMV demuxer
+  aiff                   AIFF demuxer
+  adaptive               Unified adaptive streaming for DASH/HLS
+  d3d9_filters           Direct3D9 adjust filter
+  d3d9_filters           Direct3D9 adjust filter
+  d3d9_filters           Direct3D9 adjust filter
+  d3d9_filters           Direct3D9 deinterlace filter
+  d3d11_filters          Direct3D11 adjust filter
+  d3d11_filters          Direct3D11 adjust filter
+  d3d11_filters          Direct3D11 adjust filter
+  d3d11_filters          Direct3D11 deinterlace filter
+  win_msg                Windows messages interface
+  win32                  Global Hotkeys interface
+  oldrc                  Remote control interface
+  ntservice              Windows Service interface
+  netsync                Network synchronization
+  hotkeys                Hotkeys management interface
+  gestures               Mouse gestures control interface
+  dummy                  Dummy interface
+  discord_rpc_plugin     Discord Rich Presence Integration with Dynamic Cover Art
+  zvbi                   VBI and Teletext decoder
+  x265                   H.265/HEVC encoder (x265)
+  x264                   H.264/MPEG-4 Part 10/AVC encoder (x264)
+  x26410b                H.264/MPEG-4 Part 10/AVC encoder (x264 10-bit)
+  webvtt                 WEBVTT subtitles decoder
+  webvtt                 WEBVTT subtitles parser
+  webvtt                 WEBVTT subtitles parser
+  vpx                    WebM video decoder
+  vpx                    WebM video encoder
+  vorbis                 Vorbis audio decoder
+  vorbis                 Vorbis audio encoder
+  vorbis                 Vorbis audio packetizer
+  uleaddvaudio           Ulead DV audio decoder
+  twolame                Libtwolame audio encoder
+  ttml                   TTML subtitles decoder
+  ttml                   TTML demuxer
+  theora                 Theora video decoder
+  theora                 Theora video encoder
+  theora                 Theora video packetizer
+  textst                 HDMV TextST subtitles decoder
+  t140                   T.140 text encoder
+  svcdsub                Philips OGT (SVCD subtitle) decoder
+  svcdsub                Philips OGT (SVCD subtitle) packetizer
+  subsusf                USF subtitles decoder
+  substx3g               tx3g subtitles decoder
+  subsdec                Text subtitle decoder
+  stl                    EBU STL subtitles decoder
+  spudec                 DVD subtitles decoder
+  spudec                 DVD subtitles packetizer
+  speex                  Speex audio decoder
+  speex                  Speex audio encoder
+  speex                  Speex audio packetizer
+  spdif                  S/PDIF pass-through decoder
+  sdl_image              SDL_image video decoder
+  scte27                 SCTE-27 decoder
+  scte18                 SCTE-18 decoder
+  schroedinger           Dirac video decoder using libschroedinger
+  schroedinger           Dirac video encoder using libschroedinger
+  rtpvideo               Raw video encoder for RTP
+  rawvideo               Pseudo raw video decoder
+  rawvideo               Pseudo raw video packetizer
+  qsv                    Intel QuickSync Video encoder for MPEG4-Part10/MPEG2 (aka H.264/H.262)
+  png                    PNG video decoder
+  png                    PNG video encoder
+  opus                   Opus audio decoder
+  opus                   Opus audio encoder
+  oggspots               OggSpots video decoder
+  oggspots               OggSpots video packetizer
+  mpg123                 MPEG audio decoder using mpg123
+  mft                    Media Foundation Transform decoder
+  mft                    Media Foundation Transform decoder
+  lpcm                   Linear PCM audio decoder
+  lpcm                   Linear PCM audio encoder
+  lpcm                   Linear PCM audio packetizer
+  libass                 Subtitle renderers using libass
+  kate                   Kate overlay decoder
+  jpeg                   JPEG image decoder
+  jpeg                   JPEG image encoder
+  g711                   G.711 decoder
+  g711                   G.711 encoder
+  fluidsynth             FluidSynth MIDI synthesizer
+  flac                   Flac audio decoder
+  flac                   Flac audio encoder
+  faad                   AAC audio decoder (using libfaad2)
+  edummy                 Dummy encoder
+  dxva2                  DirectX Video Acceleration (DXVA) 2.0
+  dvbsub                 DVB subtitles decoder
+  dvbsub                 DVB subtitles encoder
+  dmo                    DirectMedia Object decoder
+  dmo                    DirectMedia Object encoder
+  dmo                    DirectMedia Object decoder
+  ddummy                 Dummy decoder
+  ddummy                 Dummy decoder
+  ddummy                 Dummy decoder
+  ddummy                 Dump decoder
+  ddummy                 Dummy decoder
+  ddummy                 Dummy decoder
+  dav1d                  Dav1d video decoder
+  d3d11va                Direct3D11 Video Acceleration
+  cvdsub                 CVD subtitle decoder
+  cvdsub                 Chaoji VCD subtitle packetizer
+  crystalhd              Crystal HD hardware video decoder
+  cdg                    CDG video decoder
+  cc                     Closed Captions decoder
+  avcodec                FFmpeg audio/video decoder
+  avcodec                avparser packetizer
+  avcodec                libavformat AVIO access output
+  avcodec                libavformat AVIO access
+  avcodec                Avformat muxer
+  avcodec                Avformat demuxer
+  avcodec                FFmpeg audio/video encoder
+  avcodec                FFmpeg audio/video decoder
+  avcodec                FFmpeg audio/video decoder
+  avcodec                FFmpeg audio/video decoder
+  aribsub                ARIB subtitles decoder
+  araw                   Raw/Log Audio decoder
+  araw                   Raw audio encoder
+  aom                    AOM video decoder
+  aes3                   AES3/SMPTE 302M audio decoder
+  aes3                   AES3/SMPTE 302M audio packetizer
+  adpcm                  ADPCM audio decoder
+  waveout                WaveOut audio output
+  wasapi                 Windows Audio Session API output
+  mmdevice               Windows Multimedia Device output
+  directsound            DirectX audio output
+  directsound            DirectX audio output
+  amem                   Audio memory output
+  afile                  File audio output
+  adummy                 Dummy audio output
+  integer_mixer          Integer audio volume
+  float_mixer            Single precision audio volume
+  ugly                   Nearest-neigh
