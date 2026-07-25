@@ -6,6 +6,7 @@
 #include <windows.h>
 
 typedef struct {
+    int type;                /* 0=Playing, 2=Listening, 3=Watching */
     char details[128];       
     char state[128];         
     char large_image[512];   

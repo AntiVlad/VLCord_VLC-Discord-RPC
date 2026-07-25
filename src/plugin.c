@@ -35,7 +35,7 @@ vlc_module_begin()
     set_capability("interface", 0)
     set_callbacks(Open, Close)
 
-    add_string("discord-rpc-appid", "383226320970055681", N_("Discord App ID"), N_("Discord Application ID from Developer Portal"), false)
+    add_string("discord-rpc-appid", "1529779460042395799", N_("Discord App ID"), N_("Discord Application ID from Developer Portal"), false)
     add_string("discord-rpc-tvdb-key", "ae249700-e895-47c6-9f9d-c5ed23e1619f", N_("TVDB API Key"), N_("TheTVDB API key for TV and Movie poster lookup"), false)
 vlc_module_end()
 

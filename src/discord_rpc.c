@@ -152,6 +152,7 @@ bool discord_ipc_set_activity(discord_ipc_t *ipc, const discord_activity_t *acti
             "\"args\":{"
                 "\"pid\":%lu,"
                 "\"activity\":{"
+                    "\"type\":%d,"
                     "\"details\":\"%s\","
                     "\"state\":\"%s\""
                     "%s,"
@@ -166,6 +167,7 @@ bool discord_ipc_set_activity(discord_ipc_t *ipc, const discord_activity_t *acti
             "\"nonce\":\"%u\""
         "}",
         GetCurrentProcessId(),
+        activity->type,
         safe_details,
         safe_state,
         timestamps_json,

@@ -132,14 +132,14 @@
   audiobargraph_v        Audio Bar Graph Video sub source
   audiobargraph_v        Audio Bar Graph Video sub source
   windrive               windrive
-  windrive               windrive
   windrive               Discs
+  windrive               windrive
   upnp                   Universal Plug'n'Play
   upnp                   Universal Plug'n'Play
   upnp                   Universal Plug'n'Play
+  sap                    Network streams (SAP)
   sap                    Network streams (SAP)
   sap                    SDP Descriptions parser
-  sap                    Network streams (SAP)
   podcast                Podcasts
   podcast                Podcasts
   microdns               mDNS Network Discovery
@@ -147,9 +147,9 @@
   microdns               mDNS Renderer Discovery
   microdns               mDNS Network Discovery
   mediadirs              My Videos
-  mediadirs              My Videos
-  mediadirs              My Pictures
   mediadirs              My Music
+  mediadirs              My Pictures
+  mediadirs              My Videos
   vc1                    VC-1 packetizer
   mpegvideo              MPEG-I/II video packetizer
   mpegaudio              MPEG audio layer I/II/III packetizer
@@ -178,19 +178,19 @@
   xml                    XML Parser (using libxml2)
   rtsp                   Legacy RTSP VoD server
   stats                  Stats encoder function
+  stats                  Stats decoder function
+  stats                  Stats decoder function
+  stats                  Stats decoder function
   stats                  Stats demux function
-  stats                  Stats decoder function
-  stats                  Stats decoder function
-  stats                  Stats decoder function
   logger                 File logging
   gnutls                 GNU TLS transport layer security
   gnutls                 GNU TLS server
   fingerprinter          Track fingerprinter (based on Acoustid)
   export                 export
-  export                 HTML playlist export
-  export                 XSPF playlist export
-  export                 M3U8 playlist export
   export                 M3U playlist export
+  export                 M3U8 playlist export
+  export                 XSPF playlist export
+  export                 HTML playlist export
   audioscrobbler         Submission of played songs to last.fm
   vorepository           addons.videolan.org addons finder
   vorepository           single .vlp archive addons finder
@@ -200,16 +200,16 @@
   taglib                 taglib
   folder                 Folder meta data
   lua                    Lua interpreter
-  lua                    Lua interpreter
-  lua                    Lua SD Module
-  lua                    Lua Extension
-  lua                    Fetch artwork using lua scripts
-  lua                    Lua Playlist Parser Interface
-  lua                    Read meta data using lua scripts
-  lua                    Fetch meta data using lua scripts
-  lua                    Lua Telnet
-  lua                    Command-line interface
   lua                    Lua HTTP
+  lua                    Command-line interface
+  lua                    Lua Telnet
+  lua                    Fetch meta data using lua scripts
+  lua                    Read meta data using lua scripts
+  lua                    Lua Playlist Parser Interface
+  lua                    Fetch artwork using lua scripts
+  lua                    Lua Extension
+  lua                    Lua SD Module
+  lua                    Lua interpreter
   file                   File logger
   console                Console logger
   memory                 Secrets are stored in memory
@@ -218,8 +218,8 @@
   skins2                 Skinnable Interface
   skins2                 Skinnable Interface
   qt                     Qt interface
-  qt                     Qt interface
   qt                     Dialogs provider
+  qt                     Qt interface
   xa                     XA demuxer
   wav                    WAV demuxer
   voc                    VOC demuxer
@@ -239,20 +239,20 @@
   ps                     MPEG-PS demuxer
   ps                     MPEG-PS demuxer
   playlist               Playlist
-  playlist               WPL playlist import
-  playlist               iTunes Music Library importer
-  playlist               Dummy IFO demux
-  playlist               QuickTime Media Link importer
-  playlist               Kasenna MediaBase parser
-  playlist               ASX playlist import
-  playlist               New winamp 5.2 shoutcast import
-  playlist               XSPF playlist import
-  playlist               Podcast parser
-  playlist               DVB playlist import
-  playlist               B4S playlist import
-  playlist               PLS playlist import
-  playlist               RAM playlist import
   playlist               M3U playlist import
+  playlist               RAM playlist import
+  playlist               PLS playlist import
+  playlist               B4S playlist import
+  playlist               DVB playlist import
+  playlist               Podcast parser
+  playlist               XSPF playlist import
+  playlist               New winamp 5.2 shoutcast import
+  playlist               ASX playlist import
+  playlist               Kasenna MediaBase parser
+  playlist               QuickTime Media Link importer
+  playlist               Dummy IFO demux
+  playlist               iTunes Music Library importer
+  playlist               WPL playlist import
   ogg                    OGG demuxer
   nuv                    Nuv demuxer
   nsv                    NullSoft demuxer
@@ -285,13 +285,15 @@
   aiff                   AIFF demuxer
   adaptive               Unified adaptive streaming for DASH/HLS
   d3d9_filters           Direct3D9 adjust filter
-  d3d9_filters           Direct3D9 adjust filter
-  d3d9_filters           Direct3D9 adjust filter
   d3d9_filters           Direct3D9 deinterlace filter
-  d3d11_filters          Direct3D11 adjust filter
-  d3d11_filters          Direct3D11 adjust filter
+  d3d9_filters           Direct3D9 adjust filter
+  d3d9_filters           Direct3D9 adjust filter
   d3d11_filters          Direct3D11 adjust filter
   d3d11_filters          Direct3D11 deinterlace filter
+  d3d11_filters          AMD VQ Enhancer
+  d3d11_filters          AMD Frame Rate Doubler
+  d3d11_filters          Direct3D11 adjust filter
+  d3d11_filters          Direct3D11 adjust filter
   win_msg                Windows messages interface
   win32                  Global Hotkeys interface
   oldrc                  Remote control interface
@@ -300,7 +302,6 @@
   hotkeys                Hotkeys management interface
   gestures               Mouse gestures control interface
   dummy                  Dummy interface
-  discord_rpc_plugin     Discord Rich Presence Integration with Dynamic Cover Art
   zvbi                   VBI and Teletext decoder
   x265                   H.265/HEVC encoder (x265)
   x264                   H.264/MPEG-4 Part 10/AVC encoder (x264)
@@ -311,15 +312,15 @@
   vpx                    WebM video decoder
   vpx                    WebM video encoder
   vorbis                 Vorbis audio decoder
-  vorbis                 Vorbis audio encoder
   vorbis                 Vorbis audio packetizer
+  vorbis                 Vorbis audio encoder
   uleaddvaudio           Ulead DV audio decoder
   twolame                Libtwolame audio encoder
   ttml                   TTML subtitles decoder
   ttml                   TTML demuxer
   theora                 Theora video decoder
-  theora                 Theora video encoder
   theora                 Theora video packetizer
+  theora                 Theora video encoder
   textst                 HDMV TextST subtitles decoder
   t140                   T.140 text encoder
   svcdsub                Philips OGT (SVCD subtitle) decoder
@@ -331,8 +332,8 @@
   spudec                 DVD subtitles decoder
   spudec                 DVD subtitles packetizer
   speex                  Speex audio decoder
-  speex                  Speex audio encoder
   speex                  Speex audio packetizer
+  speex                  Speex audio encoder
   spdif                  S/PDIF pass-through decoder
   sdl_image              SDL_image video decoder
   scte27                 SCTE-27 decoder
@@ -353,8 +354,8 @@
   mft                    Media Foundation Transform decoder
   mft                    Media Foundation Transform decoder
   lpcm                   Linear PCM audio decoder
-  lpcm                   Linear PCM audio encoder
   lpcm                   Linear PCM audio packetizer
+  lpcm                   Linear PCM audio encoder
   libass                 Subtitle renderers using libass
   kate                   Kate overlay decoder
   jpeg                   JPEG image decoder
@@ -370,8 +371,8 @@
   dvbsub                 DVB subtitles decoder
   dvbsub                 DVB subtitles encoder
   dmo                    DirectMedia Object decoder
-  dmo                    DirectMedia Object encoder
   dmo                    DirectMedia Object decoder
+  dmo                    DirectMedia Object encoder
   ddummy                 Dummy decoder
   ddummy                 Dummy decoder
   ddummy                 Dummy decoder
@@ -386,15 +387,15 @@
   cdg                    CDG video decoder
   cc                     Closed Captions decoder
   avcodec                FFmpeg audio/video decoder
-  avcodec                avparser packetizer
-  avcodec                libavformat AVIO access output
-  avcodec                libavformat AVIO access
-  avcodec                Avformat muxer
-  avcodec                Avformat demuxer
+  avcodec                FFmpeg audio/video decoder
+  avcodec                FFmpeg audio/video decoder
+  avcodec                FFmpeg audio/video decoder
   avcodec                FFmpeg audio/video encoder
-  avcodec                FFmpeg audio/video decoder
-  avcodec                FFmpeg audio/video decoder
-  avcodec                FFmpeg audio/video decoder
+  avcodec                Avformat demuxer
+  avcodec                Avformat muxer
+  avcodec                libavformat AVIO access
+  avcodec                libavformat AVIO access output
+  avcodec                avparser packetizer
   aribsub                ARIB subtitles decoder
   araw                   Raw/Log Audio decoder
   araw                   Raw audio encoder
@@ -412,4 +413,4 @@
   adummy                 Dummy audio output
   integer_mixer          Integer audio volume
   float_mixer            Single precision audio volume
-  ugly                   Nearest-neigh
+  ugly                   Neares

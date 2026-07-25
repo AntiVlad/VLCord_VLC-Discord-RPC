@@ -16,14 +16,25 @@ void presence_update(discord_ipc_t *ipc, const presence_state_t *state)
     memset(&act, 0, sizeof(act));
 
     if (state->media.type == MEDIA_TYPE_MUSIC) {
+        act.type = 2; // Listening
         snprintf(act.details, sizeof(act.details), "%s", state->media.title);
         snprintf(act.state, sizeof(act.state), "%s — %s%s", state->media.artist, state->media.album,
                  state->state == PLAYSTATE_PAUSED ? " (Paused)" : "");
     } else if (state->media.type == MEDIA_TYPE_TV_SHOW) {
+        act.type = 3; // Watching
         snprintf(act.details, sizeof(act.details), "%s", state->media.show_name);
         snprintf(act.state, sizeof(act.state), "%s%s", state->media.title,
                  state->state == PLAYSTATE_PAUSED ? " (Paused)" : "");
+    } else if (state->media.type == MEDIA_TYPE_ANIME) {
+        act.type = 3; // Watching
+        const char *anime_name = state->media.show_name[0]
+                                 ? state->media.show_name
+                                 : state->media.title;
+        snprintf(act.details, sizeof(act.details), "%s", anime_name);
+        snprintf(act.state, sizeof(act.state), "Watching Anime%s",
+                 state->state == PLAYSTATE_PAUSED ? " (Paused)" : "");
     } else {
+        act.type = 3; // Watching
         snprintf(act.details, sizeof(act.details), "%s", state->media.title);
         snprintf(act.state, sizeof(act.state), "Watching%s",
                  state->state == PLAYSTATE_PAUSED ? " (Paused)" : "");
@@ -34,11 +45,25 @@ void presence_update(discord_ipc_t *ipc, const presence_state_t *state)
     } else {
         snprintf(act.large_image, sizeof(act.large_image), "vlc_logo");
     }
-    snprintf(act.large_text, sizeof(act.large_text), "VLC Media Player");
+
+    if (state->media.type == MEDIA_TYPE_TV_SHOW || state->media.type == MEDIA_TYPE_ANIME) {
+        snprintf(act.large_text, sizeof(act.large_text), "%s",
+                 state->media.show_name[0] ? state->media.show_name : state->media.clean_name);
+    } else if (state->media.type == MEDIA_TYPE_MUSIC) {
+        snprintf(act.large_text, sizeof(act.large_text), "%s - %s",
+                 state->media.artist, state->media.album);
+    } else {
+        snprintf(act.large_text, sizeof(act.large_text), "%s",
+                 state->media.title[0] ? state->media.title : "VLC Media Player");
+    }
 
     if (state->state == PLAYSTATE_PLAYING) {
         snprintf(act.small_image, sizeof(act.small_image), "playing");
-        snprintf(act.small_text, sizeof(act.small_text), "Playing");
+        if (state->media.type == MEDIA_TYPE_MUSIC) {
+            snprintf(act.small_text, sizeof(act.small_text), "Listening");
+        } else {
+            snprintf(act.small_text, sizeof(act.small_text), "Watching");
+        }
     } else {
         snprintf(act.small_image, sizeof(act.small_image), "paused");
         snprintf(act.small_text, sizeof(act.small_text), "Paused");
