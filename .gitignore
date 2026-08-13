@@ -69,3 +69,7 @@ Testing/
 
 w64devkit/
 build64/
+
+# VLC import libraries needed for CI builds
+!lib/*.dll.a
+!libvlccore.def
