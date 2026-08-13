@@ -15,6 +15,12 @@ typedef struct {
     char small_text[64];     
     int64_t start_timestamp; 
     int64_t end_timestamp;   
+
+    struct {
+        char label[32];
+        char url[256];
+    } buttons[2];
+    int button_count;
 } discord_activity_t;
 
 typedef struct {

@@ -145,7 +145,24 @@ bool discord_ipc_set_activity(discord_ipc_t *ipc, const discord_activity_t *acti
         }
     }
 
-    char payload[2048];
+    char buttons_json[1024] = "";
+    if (activity->button_count > 0) {
+        char tmp[1024];
+        int bpos = 0;
+        bpos += snprintf(tmp + bpos, sizeof(tmp) - bpos, ",\"buttons\":[");
+        for (int i = 0; i < activity->button_count && i < 2; i++) {
+            char safe_label[64], safe_url[512];
+            escape_json_str(activity->buttons[i].label, safe_label, sizeof(safe_label));
+            escape_json_str(activity->buttons[i].url, safe_url, sizeof(safe_url));
+            if (i > 0) bpos += snprintf(tmp + bpos, sizeof(tmp) - bpos, ",");
+            bpos += snprintf(tmp + bpos, sizeof(tmp) - bpos,
+                "{\"label\":\"%s\",\"url\":\"%s\"}", safe_label, safe_url);
+        }
+        bpos += snprintf(tmp + bpos, sizeof(tmp) - bpos, "]");
+        snprintf(buttons_json, sizeof(buttons_json), "%s", tmp);
+    }
+
+    char payload[4096];
     int len = snprintf(payload, sizeof(payload),
         "{"
             "\"cmd\":\"SET_ACTIVITY\","
@@ -162,6 +179,7 @@ bool discord_ipc_set_activity(discord_ipc_t *ipc, const discord_activity_t *acti
                         "\"small_image\":\"%s\","
                         "\"small_text\":\"%s\""
                     "}"
+                    "%s"
                 "}"
             "},"
             "\"nonce\":\"%u\""
@@ -175,6 +193,7 @@ bool discord_ipc_set_activity(discord_ipc_t *ipc, const discord_activity_t *acti
         safe_large_text,
         safe_small_img,
         safe_small_text,
+        buttons_json,
         ipc->nonce++
     );
 

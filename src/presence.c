@@ -80,6 +80,12 @@ void presence_update(discord_ipc_t *ipc, const presence_state_t *state)
         }
     }
 
+    /* Activity button linking to the repository */
+    snprintf(act.buttons[0].label, sizeof(act.buttons[0].label), "Get Vlcord");
+    snprintf(act.buttons[0].url, sizeof(act.buttons[0].url),
+             "https://github.com/AntiVlad/Vlcord_VLC-Discord-RPC");
+    act.button_count = 1;
+
     discord_ipc_set_activity(ipc, &act);
 }
 

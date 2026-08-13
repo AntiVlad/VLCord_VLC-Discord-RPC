@@ -1,0 +1,94 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-x86-x64:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: [x86, x64]
+        include:
+          - arch: x86
+            compiler: i686-w64-mingw32-gcc
+            vlc_lib: vlccore32
+          - arch: x64
+            compiler: x86_64-w64-mingw32-gcc
+            vlc_lib: vlccore
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install MinGW
+        run: sudo apt-get update && sudo apt-get install -y mingw-w64
+        
+      - name: Compile
+        run: |
+          ${{ matrix.compiler }} -shared -o libdiscord_rpc_plugin.dll \
+            src/plugin.c src/discord_rpc.c src/artwork.c src/presence.c src/json.c \
+            -Iinclude -Iinclude/vlc/plugins -Isrc \
+            -D__PLUGIN__ -D_WIN32_WINNT=0x0601 \
+            -Llib -l${{ matrix.vlc_lib }} -lwinhttp -lws2_32 -static-libgcc
+            
+      - name: Create ZIP
+        run: zip vlcord-${{ matrix.arch }}.zip libdiscord_rpc_plugin.dll
+        
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: vlcord-${{ matrix.arch }}
+          path: vlcord-${{ matrix.arch }}.zip
+          
+  build-arm64:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install llvm-mingw
+        run: |
+          wget https://github.com/mstorsjo/llvm-mingw/releases/download/20240606/llvm-mingw-20240606-ucrt-ubuntu-20.04-x86_64.tar.xz
+          tar -xf llvm-mingw-20240606-ucrt-ubuntu-20.04-x86_64.tar.xz
+          echo "$(pwd)/llvm-mingw-20240606-ucrt-ubuntu-20.04-x86_64/bin" >> $GITHUB_PATH
+          
+      - name: Generate arm64 import lib
+        run: |
+          llvm-dlltool -m arm64 -d libvlccore.def -l lib/libvlccore-arm64.a
+          
+      - name: Compile
+        run: |
+          aarch64-w64-mingw32-gcc -shared -o libdiscord_rpc_plugin.dll \
+            src/plugin.c src/discord_rpc.c src/artwork.c src/presence.c src/json.c \
+            -Iinclude -Iinclude/vlc/plugins -Isrc \
+            -D__PLUGIN__ -D_WIN32_WINNT=0x0601 \
+            -Llib -lvlccore-arm64 -lwinhttp -lws2_32 -static-libgcc
+            
+      - name: Create ZIP
+        run: zip vlcord-arm64.zip libdiscord_rpc_plugin.dll
+        
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: vlcord-arm64
+          path: vlcord-arm64.zip
+          
+  release:
+    needs: [build-x86-x64, build-arm64]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            artifacts/vlcord-x86/vlcord-x86.zip
+            artifacts/vlcord-x64/vlcord-x64.zip
+            artifacts/vlcord-arm64/vlcord-arm64.zip
